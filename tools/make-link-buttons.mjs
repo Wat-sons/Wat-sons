@@ -36,8 +36,8 @@ const THEMES = {
   // 实测对比度：深底 #1C2128 上 4.28:1，浅底 #F6F8FA 上 3.55:1 ——
   // 图标属于 WCAG 的"非文本图形"，门槛是 3:1，两边都过。
   // 我一开始自己发明了 #4FA8DC（浅底只有 2.48:1，不达标），已改回。
-  dark:  { bg: "#1C2128", bd: "#30363D", fg: "#C9D1D9", site: "#D8FF4A", cf: "#1F8ACB" },
-  light: { bg: "#F6F8FA", bd: "#D0D7DE", fg: "#1F2328", site: "#5C7500", cf: "#1F8ACB" },
+  dark:  { bg: "#1C2128", bd: "#30363D", fg: "#C9D1D9", site: "#D8FF4A", cf: "#1C98D3" },
+  light: { bg: "#F6F8FA", bd: "#D0D7DE", fg: "#1F2328", site: "#5C7500", cf: "#1C98D3" },
 };
 
 const ICONS = {
