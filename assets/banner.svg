@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" width="1200" height="240" role="img" aria-label="Wat-sons · SYSTEM ONLINE">
+  <title>Wat-sons.exe — SYSTEM ONLINE</title>
+  <desc>Dark terminal-style banner. Q + algorithm-path mark on the left, wordmark and status line on the right.</desc>
+
+  <defs>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#A371F7"/>
+      <stop offset="1" stop-color="#58A6FF"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A371F7" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#58A6FF" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#30363D" stroke-width="1" stroke-opacity=".55"/>
+    </pattern>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+      .cursor { animation: blink 1.05s steps(1, end) infinite; }
+      @keyframes blink { 0%, 50% { opacity: 1 } 50.01%, 100% { opacity: 0 } }
+      @media (prefers-reduced-motion: reduce) { .cursor { animation: none } }
+    </style>
+  </defs>
+
+  <!-- 背景 + 网格 + 顶部霓虹 -->
+  <rect width="1200" height="240" rx="12" fill="#0D1117"/>
+  <rect width="1200" height="240" rx="12" fill="url(#grid)"/>
+  <rect width="1200" height="86" rx="12" fill="url(#fade)"/>
+  <rect x=".5" y=".5" width="1199" height="239" rx="12" fill="none" stroke="#30363D"/>
+
+  <!-- 左侧：Q + 一段带节点的路径（和站点标识同源） -->
+  <g transform="translate(72 70)">
+    <circle cx="42" cy="42" r="30" fill="none" stroke="#C9D1D9" stroke-width="7"/>
+    <path d="M63 63 C74 74 84 72 95 65" fill="none" stroke="url(#neon)" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="101" cy="62" r="6" fill="#58A6FF"/>
+  </g>
+
+  <!-- 右侧：终端提示符 + 主标题 + 状态行 -->
+  <g transform="translate(232 0)">
+    <text class="mono" x="0" y="66" font-size="17" fill="#8B949E">quchen@github</text>
+    <text class="mono" x="128" y="66" font-size="17" fill="#30363D">:</text>
+    <text class="mono" x="138" y="66" font-size="17" fill="#58A6FF">~</text>
+    <text class="mono" x="152" y="66" font-size="17" fill="#30363D">$</text>
+    <text class="mono" x="172" y="66" font-size="17" fill="#C9D1D9">./</text>
+    <text class="mono" x="196" y="66" font-size="17" fill="#A371F7" font-weight="700">Wat-sons.exe</text>
+
+    <text class="mono" x="0" y="118" font-size="38" font-weight="700" fill="#C9D1D9" letter-spacing="1">SYSTEM ONLINE</text>
+    <rect class="cursor" x="322" y="92" width="18" height="30" fill="#58A6FF"/>
+
+    <text class="mono" x="0" y="166" font-size="16" fill="#8B949E">Artificial Intelligence Student</text>
+    <text class="mono" x="0" y="196" font-size="16" fill="#8B949E">Competitive Programmer</text>
+    <circle cx="352" cy="161" r="3.5" fill="#A371F7"/>
+    <text class="mono" x="366" y="166" font-size="16" fill="#8B949E">Algorithm Enthusiast</text>
+    <circle cx="556" cy="161" r="3.5" fill="#58A6FF"/>
+    <text class="mono" x="570" y="166" font-size="16" fill="#8B949E">Developer</text>
+
+    <text class="mono" x="0" y="224" font-size="14" fill="#30363D">// C++ · algorithms · intelligent optimization · zero-dependency static builds</text>
+  </g>
+</svg>

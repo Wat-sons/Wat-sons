@@ -1,0 +1,58 @@
+name: Generate Snake
+
+# 把贡献日历渲染成蛇形 SVG，发到独立的 output 分支。
+# 只写 output 分支，**不碰 main**（main 上只有 README 和 assets）。
+#
+# 版本已核实（2026-10 查证，不是抄来的旧示例）：
+#   Platane/snk              latest v3.5.0   → 用 svg-only 变体，只出 SVG，比默认快
+#   crazy-max/ghaction-github-pages  latest v5.0.0
+# 输入参数名取自两个 action 的 action.yml：build_dir / target_branch /
+# commit_message / github_user_name / outputs。
+
+on:
+  schedule:
+    # 每天 18:10 UTC（北京时间次日 02:10）跑一次
+    - cron: "10 18 * * *"
+  workflow_dispatch: # 支持手动触发
+  push:
+    branches: [main]
+    # 只有工作流本身变了才重跑，改 README 不触发
+    paths: [".github/workflows/snake.yml"]
+
+# 只需要写 contents —— 用于把产物推到 output 分支。
+# 不申请 pages / actions / id-token 等无关权限。
+permissions:
+  contents: write
+
+# 同一时间只跑一个，避免两次运行同时推 output 分支打架
+concurrency:
+  group: snake
+  cancel-in-progress: true
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Generate snake (light + dark)
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          # 每行一个输出文件，可用 query string 定制配色
+          outputs: |
+            dist/snake.svg
+            dist/snake-dark.svg?palette=github-dark
+
+      - name: Publish to output branch
+        uses: crazy-max/ghaction-github-pages@v5
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: "chore(snake): refresh contribution graph [skip ci]"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 分支不存在时 ghaction-github-pages 会自己建；
+      # 生成失败会让整个 job 失败并在 Actions 页报红，
+      # 而 README 里的蛇图只是 <img>，加载不到时下面的文字说明照常显示。
