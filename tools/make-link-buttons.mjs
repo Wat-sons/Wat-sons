@@ -32,24 +32,34 @@ const b64 = (f) => {
 };
 
 const THEMES = {
-  // CF 用**官方品牌色**（simple-icons 的默认 fill 就是它），两个主题都不调。
-  // 实测对比度：深底 #1C2128 上 4.28:1，浅底 #F6F8FA 上 3.55:1 ——
-  // 图标属于 WCAG 的"非文本图形"，门槛是 3:1，两边都过。
-  // 我一开始自己发明了 #4FA8DC（浅底只有 2.48:1，不达标），已改回。
-  dark:  { bg: "#1C2128", bd: "#30363D", fg: "#C9D1D9", site: "#D8FF4A", cf: "#1C98D3" },
-  light: { bg: "#F6F8FA", bd: "#D0D7DE", fg: "#1F2328", site: "#5C7500", cf: "#1C98D3" },
+  // Codeforces 的三条是 **黄 / 蓝 / 红**（罗马尼亚国旗 —— CF 是罗马尼亚的），
+  // 不是纯色。色值实测自官网实物：
+  //   https://codeforces.com/images/codeforces-logo.png
+  //   黄 #FDD367（x5..15）· 蓝 #1C97D3（x20..30，最高）· 红 #BA1F23（x35..44，最矮）
+  // 官网原色在两套底色上各有一条不达标，只替换那一条：
+  //   黄 #FDD367 在浅底只有 1.34:1 → 浅色版换 #B8860B（3.06:1）
+  //   红 #BA1F23 在深底只有 2.55:1 → 深色版换 #E5484D（4.14:1）
+  dark:  { bg: "#1C2128", bd: "#30363D", fg: "#C9D1D9", site: "#D8FF4A",
+           cf: ["#FDD367", "#1C97D3", "#E5484D"] },
+  light: { bg: "#F6F8FA", bd: "#D0D7DE", fg: "#1F2328", site: "#5C7500",
+           cf: ["#B8860B", "#1C97D3", "#BA1F23"] },
 };
+
+/** 三条竖条，几何对齐 simple-icons 的官方路径（x 0-6 / 9-15 / 18-24） */
+const cfBars = ([c1, c2, c3]) =>
+  `<rect x="0" y="7.5" width="6" height="13.5" rx="1" fill="${c1}"/>` +
+  `<rect x="9" y="3" width="6" height="18" rx="1" fill="${c2}"/>` +
+  `<rect x="18" y="10.5" width="6" height="10.5" rx="1" fill="${c3}"/>`;
 
 const ICONS = {
   site: `<circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
          <ellipse cx="12" cy="12" rx="3.6" ry="8.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
          <path d="M3.8 12h16.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`,
-  codeforces: `<path d="${CF_PATH}" fill="currentColor" transform="translate(0.6 1.2) scale(0.95)"/>`,
 };
 
 const LINKS = [
   { id: "site",       label: "个人网站",   kind: "glyph", icon: "site",       color: (c) => c.site },
-  { id: "codeforces", label: "Codeforces", kind: "glyph", icon: "codeforces", color: (c) => c.cf },
+  { id: "codeforces", label: "Codeforces", kind: "bars" },
   { id: "nowcoder",   label: "牛客",       kind: "image", src: "nowcoder-64.png" },
   { id: "blog",       label: "技术博客",   kind: "image", src: "cnblogs.png" },
 ];
@@ -63,10 +73,16 @@ for (const [theme, c] of Object.entries(THEMES)) {
   for (const l of LINKS) {
     const W = Math.round(PAD_X * 2 + ICON + GAP + textWidth(l.label, FS));
     const ix = PAD_X, iy = (H - ICON) / 2;
-    const body = l.kind === "image"
+    let body;
+    if (l.kind === "image") {
       // 彩色图标：铺满 19px 方格（圆角已经在图片里）
-      ? `<image href="${b64(l.src)}" x="${ix}" y="${iy}" width="${ICON}" height="${ICON}"/>`
-      : `<g transform="translate(${ix} ${iy}) scale(${(ICON / 24).toFixed(4)})" color="${l.color(c)}">${ICONS[l.icon]}</g>`;
+      body = `<image href="${b64(l.src)}" x="${ix}" y="${iy}" width="${ICON}" height="${ICON}"/>`;
+    } else if (l.kind === "bars") {
+      // Codeforces：三条异色，几何缩放后仍用精确坐标
+      body = `<g transform="translate(${ix} ${iy}) scale(${(ICON / 24).toFixed(4)})">${cfBars(c.cf)}</g>`;
+    } else {
+      body = `<g transform="translate(${ix} ${iy}) scale(${(ICON / 24).toFixed(4)})" color="${l.color(c)}">${ICONS[l.icon]}</g>`;
+    }
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${l.label}">
   <title>${l.label}</title>
   <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="9" fill="${c.bg}" stroke="${c.bd}"/>
