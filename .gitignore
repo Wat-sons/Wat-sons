@@ -1,0 +1,7 @@
+# 本地预览截图，不进仓库
+预览-*.png
+*.png
+
+# 系统垃圾
+.DS_Store
+Thumbs.db
