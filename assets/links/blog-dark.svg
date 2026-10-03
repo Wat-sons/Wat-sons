@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 40" width="112" height="40" role="img" aria-label="技术博客">
+  <title>技术博客</title>
+  <rect x=".5" y=".5" width="111" height="39" rx="9" fill="#1C2128" stroke="#30363D"/>
+  <g transform="translate(14 10.5) scale(0.7917)" color="#C9D1D9"><path d="M6.2 3.4h7.4l4.2 4.2v13H6.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+         <path d="M13.6 3.4v4.2h4.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+         <path d="M9.2 12h5.6M9.2 15h5.6M9.2 18h3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></g>
+  <text x="42" y="24.9" font-family="-apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif"
+        font-size="14" font-weight="600" fill="#C9D1D9">技术博客</text>
+</svg>

@@ -6,7 +6,7 @@
 
 **Artificial Intelligence Student · Competitive Programmer · Developer**
 
-[个人网站](https://wat-sons.github.io/) &nbsp;·&nbsp; [Codeforces](https://codeforces.com/profile/quchen666) &nbsp;·&nbsp; [牛客](https://ac.nowcoder.com/acm/contest/profile/951251697) &nbsp;·&nbsp; [技术博客](https://www.cnblogs.com/quchen-blog)
+<a href="https://wat-sons.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Wat-sons/Wat-sons/main/assets/links/site-dark.svg"><img src="https://raw.githubusercontent.com/Wat-sons/Wat-sons/main/assets/links/site-light.svg" alt="个人网站" height="40"></picture></a> <a href="https://codeforces.com/profile/quchen666"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Wat-sons/Wat-sons/main/assets/links/codeforces-dark.svg"><img src="https://raw.githubusercontent.com/Wat-sons/Wat-sons/main/assets/links/codeforces-light.svg" alt="Codeforces" height="40"></picture></a> <a href="https://ac.nowcoder.com/acm/contest/profile/951251697"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Wat-sons/Wat-sons/main/assets/links/nowcoder-dark.svg"><img src="https://raw.githubusercontent.com/Wat-sons/Wat-sons/main/assets/links/nowcoder-light.svg" alt="牛客" height="40"></picture></a> <a href="https://www.cnblogs.com/quchen-blog"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Wat-sons/Wat-sons/main/assets/links/blog-dark.svg"><img src="https://raw.githubusercontent.com/Wat-sons/Wat-sons/main/assets/links/blog-light.svg" alt="技术博客" height="40"></picture></a>
 
 </div>
 

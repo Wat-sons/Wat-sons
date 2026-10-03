@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 40" width="84" height="40" role="img" aria-label="牛客">
+  <title>牛客</title>
+  <rect x=".5" y=".5" width="83" height="39" rx="9" fill="#1C2128" stroke="#30363D"/>
+  <g transform="translate(14 10.5) scale(0.7917)" color="#C9D1D9"><path d="M5.4 18.6V5.4h2.9l7.3 8.1V5.4h2.9v13.2h-2.9L8.3 10.5v8.1z" fill="currentColor"/></g>
+  <text x="42" y="24.9" font-family="-apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif"
+        font-size="14" font-weight="600" fill="#C9D1D9">牛客</text>
+</svg>
