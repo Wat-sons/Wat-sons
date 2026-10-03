@@ -94,7 +94,7 @@ for (const [theme, c] of Object.entries(THEMES)) {
     writeFileSync(`${OUT}/${l.id}-${theme}.svg`, svg, "utf8");
   }
 }
-// 提醒：改完图标后，README.md 里那 8 个 URL 的 ?v= 要 +1。
+// ⚠ 改完图标后**必须**把 README.md 里那 8 个 URL 的 ?v= 加一，否则等于没改。
 // raw.githubusercontent 的 CDN 缓存 5 分钟，浏览器还会再缓存一层，
 // 不换 URL 的话你自己和访客都会看到旧图标。
 const out = readdirSync(OUT).filter((f) => f.endsWith(".svg")).sort();
