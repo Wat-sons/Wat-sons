@@ -6,7 +6,7 @@
 
 **Artificial Intelligence Student · Competitive Programmer · Developer**
 
-[个人网站](https://wat-sons.github.io/) &nbsp;·&nbsp; [Site Source](https://github.com/Wat-sons/Wat-sons.github.io) &nbsp;·&nbsp; [XCPC VP Tracker](https://wat-sons.github.io/XCPC-VP-Tracker/) &nbsp;·&nbsp; [Repositories](https://github.com/Wat-sons?tab=repositories)
+[个人网站](https://wat-sons.github.io/) &nbsp;·&nbsp; [Codeforces](https://codeforces.com/profile/quchen666) &nbsp;·&nbsp; [牛客](https://ac.nowcoder.com/acm/contest/profile/951251697) &nbsp;·&nbsp; [技术博客](https://www.cnblogs.com/quchen-blog)
 
 </div>
 
