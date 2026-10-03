@@ -164,6 +164,4 @@ quchen / Wat-sons
 ACCESS GRANTED // SEE YOU IN THE NEXT COMMIT
 ```
 
-<sub>本站与仓库均不公开真实姓名、学号、联系方式等个人信息。</sub>
-
 </div>
