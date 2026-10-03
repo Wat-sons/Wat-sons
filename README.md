@@ -156,10 +156,6 @@ quchen / Wat-sons
 
 <div align="center">
 
-[个人网站](https://wat-sons.github.io/) &nbsp;·&nbsp; [XCPC VP Tracker](https://wat-sons.github.io/XCPC-VP-Tracker/) &nbsp;·&nbsp; [Codeforces](https://codeforces.com/profile/quchen666) &nbsp;·&nbsp; [技术博客](https://www.cnblogs.com/quchen-blog) &nbsp;·&nbsp; [牛客](https://ac.nowcoder.com/acm/contest/profile/951251697)
-
-<br><br>
-
 ```
 ACCESS GRANTED // SEE YOU IN THE NEXT COMMIT
 ```
