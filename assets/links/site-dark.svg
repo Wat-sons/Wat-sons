@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 40" width="112" height="40" role="img" aria-label="个人网站">
   <title>个人网站</title>
   <rect x=".5" y=".5" width="111" height="39" rx="9" fill="#1C2128" stroke="#30363D"/>
-  <g transform="translate(14 10.5) scale(0.7917)" color="#C9D1D9"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+  <g transform="translate(14 10.5) scale(0.7917)" color="#D8FF4A"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
          <ellipse cx="12" cy="12" rx="3.6" ry="8.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
          <path d="M3.8 12h16.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></g>
   <text x="42" y="24.9" font-family="-apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif"
